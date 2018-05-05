@@ -1,0 +1,16 @@
+runtime: php55
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: public/index.php
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 1
+  min_pending_latency: 8000ms
+  max_pending_latency: automatic
+
+includes:
+  - secrets.yaml
